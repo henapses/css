@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+
+@font-face {
+  font-family: "Dm serif";
+  src: url(./assets/font/DMSerifDisplay-Regular.ttf);
+}
+
+body {
+  font-family: "Dm serif", Verdana, Geneva, Tahoma, sans-serif;
+  background: url(./assets/img/japan.jpeg) center/cover;
+  min-height: 100vh;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  font-size: 2.5rem;
+  text-shadow: -4px 4px 13px #0202021e;
+  color: rgb(244, 239, 239);
+}
+
+main {
+  min-height: 500px;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.309);
+  margin: 0 auto;
+
+  border-radius: 20px 20px 0 0;
+  box-shadow: -10px 12px 18px 0px #ffffff59;
+}
+
+.flexbox,
+.grid,
+.absolute {
+  border: 2px solid blue;
+  border-radius: 5px;
+  margin: 5px;
+  min-height: 150px;
+}
+.flexbox ul {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.flexbox li {
+  list-style: none;
+  height: 160px;
+  width: 160px;
+  margin: 10px;
+  background: turquoise;
+  /* Centrer un unique élément verticalement et horizontalement*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Grid*/
+.grid-container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.grid img {
+  width: 30%;
+  margin: 20px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "i1 i2"
+    "ta ta"
+    "vi bt";
+}
+input,
+textarea {
+  margin: 5px;
+  border: 1px solid darkblue;
+  padding: 10px;
+  font-size: 1.1rem;
+  font-family: "dm serif";
+}
+textarea {
+  grid-area: ta;
+  height: 40px;
+  resize: none;
+}
+
+#btn-submit {
+  grid-area: bt;
+  cursor: pointer;
+  background: cyan;
+  transition: 0.2s;
+}
+
+#btn-submit:hover {
+  background: darkblue;
+  color: white;
+}
+
+/* Absolute*/
+.absolute {
+  position: relative;
+}
+
+#circle1 {
+  height: 80px;
+  width: 80px;
+  border-radius: 150px;
+  position: absolute;
+  background: white;
+  top: -20px;
+  right: -20px;
+}
+
+#circle2 {
+  height: 80px;
+  width: 80px;
+  border-radius: 150px;
+  position: absolute;
+  background: rgb(110, 82, 82);
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 900px) {
+  .grid-container {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  form {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "i1" "i2" "ta" "bt";
+  }
+}
